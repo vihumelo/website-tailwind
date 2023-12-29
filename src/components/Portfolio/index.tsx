@@ -25,7 +25,7 @@ const Portfolio: React.FC = () => {
             <CustomCard
               title="Meu Website"
               description="Apesar de não ser um designer, este website foi construído por mim para demonstrar minhas habilidades com as modernas tecnologias React, TypeScript, CSS3 e uso dos pré-processadores SCSS e Tailwind CSS. SCSS é uma extensão do CSS que adiciona funcionalidades e melhorias à linguagem, enquanto o Tailwind CSS é um framework de utilitários CSS que facilita a criação rápida e consistente de interfaces. O código-fonte está disponível publicamente, promovendo a colaboração na comunidade."
-              link="https://www.google.com"
+              link="https://github.com/vihumelo/website-tailwind"
             />
           </div>
           <div className="pt-20 pr-8">
