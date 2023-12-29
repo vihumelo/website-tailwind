@@ -1,0 +1,281 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  transform: translateX(100%);
+  background: #181818;
+  height: 7rem;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+
+  &.mobile-show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    color: #4d4d4e;
+    position: relative;
+    margin-top: 20px;
+    transition: color 0.3s ease-in-out;
+
+    i {
+      transition: all 2.3s ease-out;
+    }
+
+    &:hover {
+      color: #ffd700;
+
+      svg {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:after {
+      display: flex;
+      justify-content: center;
+      content: "";
+      font-size: 10px;
+      letter-spacing: 2px;
+      position: absolute;
+      width: 100%;
+      transition: all 0.3s ease-out;
+      top: 8px;
+      opacity: 0;
+    }
+
+    &:first-child {
+      &::after {
+        content: "INÍCIO";
+      }
+    }
+  }
+
+  a.about-link {
+    &:after {
+      content: "SOBRE";
+    }
+  }
+
+  a.contact-link {
+    &:after {
+      content: "CONTATO";
+    }
+  }
+
+  a.portfolio-link {
+    &:after {
+      content: "PORTFOLIO";
+    }
+  }
+
+  a.folder-link {
+    &:after {
+      content: "CARREIRA";
+    }
+  }
+
+  a.active {
+    svg {
+      color: #ffd700;
+    }
+  }
+}
+
+ul {
+  display: none;
+}
+
+.flat-button {
+  color: #ffd700;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid #ffd700;
+  margin-top: 25px;
+  float: left;
+  animation: fadeInAnimation 1s 1.8s backwards;
+  white-space: nowrap;
+  width: 13rem;
+
+  &:hover {
+    background: #ffd700;
+    color: #333;
+  }
+}
+
+.custom-input {
+  background-color: #115173;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  transition: border-bottom-color 0.5s ease-in-out;
+
+  &:focus {
+    border-color: #ffd700;
+  }
+}
+
+.ant-card-head {
+  border-bottom: none;
+}
+
+.slick-dots li button:before {
+  color: #929292;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffd700 !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
+    transition: none;
+    transform: translateX(0);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 30%;
+    width: 100%;
+
+    a {
+      font-size: 22px;
+      margin-top: 40px;
+    }
+  }
+
+  ul {
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+      a {
+        padding: 7px 0;
+        display: block;
+        font-size: 15px;
+        line-height: 16px;
+
+        &:hover svg {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+}
+
+//fonts
+
+.font-helvetica {
+  font-family: "Helvetica Neue";
+  color: white;
+  font-size: 16px;
+}
+
+.font-la-belle-aurore {
+  font-family: "La Belle Aurore", cursive;
+  font-size: 22px;
+  opacity: 0.6;
+  color: #ffd700;
+}
+
+.font-coolvetica {
+  color: #fff;
+  font-size: 66px;
+  line-height: 55px;
+  font-family: "Coolvetica";
+  font-weight: 400;
+
+  &.style2 {
+    color: #8d8d8d;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    animation: fadeIn 0.5s 1s backwards;
+    line-height: 20px;
+  }
+}
+
+//animations
+
+.animation-text {
+  transform-style: preserve-3d;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.animation-emoji {
+  &:after {
+    content: ":)";
+    font-family: "La Belle Aurore", cursive;
+    color: #ffd700;
+    font-size: 40px;
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 20px;
+    animation: fadeIn 0.5s 1.7s backwards;
+  }
+}
+
+.loader {
+  &-hidden {
+    display: none;
+  }
+
+  &-active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeOut 0.3s 1s;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .custom-sm-hidden {
+    display: none;
+  }
+}
