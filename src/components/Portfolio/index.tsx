@@ -32,7 +32,7 @@ const Portfolio: React.FC = () => {
             <CustomCard
               title="Django Framework"
               description="Uma aplicação utilizando a robusta biblioteca Django do Python, dotada de funções administrativas que facilitam a criação de cadastros de colaboradores em empresas. Além das ferramentas administrativas, implementei API Endpoints completos, tornando a aplicação facilmente acessível e integrável com outras soluções."
-              link="https://github.com/vihumelo/IGSChallenge"
+              link="https://github.com/vihumelo/django-framework"
             />
           </div>
           <div className="pt-20 pr-8">
