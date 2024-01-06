@@ -80,8 +80,8 @@ const Sidebar: React.FC = () => {
         onClick={() => setShowNav(!showNav)}
         icon={faBars}
         color="#ffd700"
-        size="3x"
-        className="absolute top-6 right-4 block lg:hidden"
+        style={{ fontSize: "2.7em" }}
+        className="absolute top-6 right-9 block lg:hidden"
       />
     </div>
   );
